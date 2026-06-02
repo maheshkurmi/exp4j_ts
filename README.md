@@ -2,6 +2,43 @@
 
 A TypeScript port of the Java exp4j mathematical expression evaluator, optimized and cleaned from JSweet transpiler artifacts.
 
+## Features
+
+✅ **Browser-ready** - Vanilla JavaScript bundle (88KB)  
+✅ **JSweet Candy** - Use directly in Java/JSweet projects  
+✅ **Type Definitions** - Full TypeScript `.d.ts` files  
+✅ **Optimized** - 70% smaller than original JSweet output  
+✅ **Clean API** - No transpiler bloat or artifacts  
+
+## Quick Start
+
+### For Browser (Vanilla JavaScript)
+
+```html
+<script src="./build/exp4j.bundle.js"></script>
+<script>
+  const result = new net.objecthunter.exp4j.ExpressionBuilder("2 + 3 * 4")
+    .build()
+    .evaluate();
+  console.log(result); // 14
+</script>
+```
+
+### For JSweet/Java Projects
+
+```java
+import net.objecthunter.exp4j.*;
+
+Expression expr = new ExpressionBuilder("3 * x + 2")
+    .variable("x")
+    .build()
+    .setVariable("x", 5.0);
+
+System.out.println(expr.evaluate()); // 17.0
+```
+
+📖 **See [JSWEET_CANDY.md](JSWEET_CANDY.md) for complete JSweet integration guide**
+
 ## Build
 
 Compile TypeScript to JavaScript with type definitions:
