@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exp4j - Simple Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        h1 { color: #333; }
+        .demo { 
+            background: #f0f0f0; 
+            padding: 15px; 
+            margin: 15px 0; 
+            border-radius: 5px;
+        }
+        code { 
+            background: #fff; 
+            padding: 2px 5px; 
+            border-radius: 3px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>exp4j TypeScript - Simple Example</h1>
+    
+    <div class="demo">
+        <h3>Example 1: Basic Arithmetic</h3>
+        <p>Expression: <code>2 + 3 * 4</code></p>
+        <p id="result1">Loading...</p>
+    </div>
+    
+    <div class="demo">
+        <h3>Example 2: With Variables</h3>
+        <p>Expression: <code>3 * x + 2 * y</code></p>
+        <p>Where x=5, y=10</p>
+        <p id="result2">Loading...</p>
+    </div>
+    
+    <div class="demo">
+        <h3>Example 3: Math Functions</h3>
+        <p>Expression: <code>sqrt(16) + sin(0) + cos(0)</code></p>
+        <p id="result3">Loading...</p>
+    </div>
+    
+    <div class="demo">
+        <h3>Example 4: Pythagorean Theorem</h3>
+        <p>Expression: <code>sqrt(a^2 + b^2)</code></p>
+        <p>Where a=3, b=4</p>
+        <p id="result4">Loading...</p>
+    </div>
+
+    <!-- Load the bundled library -->
+    <script src="./build/exp4j.bundle.js"></script>
+    
+    <script>
+        // Example 1: Basic arithmetic
+        const expr1 = new net.objecthunter.exp4j.ExpressionBuilder("2 + 3 * 4")
+            .build();
+        document.getElementById('result1').textContent = 
+            `Result: ${expr1.evaluate()} ✓`;
+        
+        // Example 2: With variables
+        const expr2 = new net.objecthunter.exp4j.ExpressionBuilder("3 * x + 2 * y")
+            .variable("x")
+            .variable("y")
+            .build()
+            .setVariable("x", 5)
+            .setVariable("y", 10);
+        document.getElementById('result2').textContent = 
+            `Result: ${expr2.evaluate()} ✓`;
+        
+        // Example 3: Math functions
+        const expr3 = new net.objecthunter.exp4j.ExpressionBuilder("sqrt(16) + sin(0) + cos(0)")
+            .build();
+        document.getElementById('result3').textContent = 
+            `Result: ${expr3.evaluate()} ✓`;
+        
+        // Example 4: Pythagorean theorem
+        const expr4 = new net.objecthunter.exp4j.ExpressionBuilder("sqrt(a^2 + b^2)")
+            .variables("a", "b")
+            .build()
+            .setVariable("a", 3)
+            .setVariable("b", 4);
+        document.getElementById('result4').textContent = 
+            `Result: ${expr4.evaluate()} (should be 5) ✓`;
+        
+        console.log('✓ All examples completed successfully!');
+    </script>
+</body>
+</html>
