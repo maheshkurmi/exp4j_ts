@@ -1,0 +1,9 @@
+{
+  "name": "exp4j",
+  "version": "1.0.0",
+  "description": "Mathematical expression evaluator candy for JSweet",
+  "candies": [],
+  "main": "net/objecthunter/exp4j/ExpressionBuilder",
+  "targetVersion": "ES2020",
+  "bundle": true
+}

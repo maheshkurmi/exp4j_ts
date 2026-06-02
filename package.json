@@ -1,0 +1,29 @@
+{
+  "name": "exp4j-candy",
+  "version": "1.0.0",
+  "description": "JSweet candy for exp4j expression evaluator",
+  "keywords": ["jsweet", "candy", "exp4j", "expression", "evaluator", "math"],
+  "main": "bundle/exp4j.bundle.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*.d.ts",
+    "bundle/exp4j.bundle.js",
+    "src/**/*.ts"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && ./bundle.sh",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maheshkurmi/exp4j_ts.git"
+  },
+  "author": "Mahesh Kurmi",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "jsweet-core": ">=2.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
