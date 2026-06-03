@@ -1,14 +1,15 @@
 {
   "name": "exp4j-candy",
   "version": "1.0.0",
-  "description": "JSweet candy for exp4j expression evaluator",
+  "description": "JSweet candy for exp4j expression evaluator - TypeScript port with optimizations",
   "keywords": ["jsweet", "candy", "exp4j", "expression", "evaluator", "math"],
   "main": "bundle/exp4j.bundle.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist/**/*.d.ts",
     "bundle/exp4j.bundle.js",
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "exp4j-1.0.0.jar"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json && ./bundle.sh",
